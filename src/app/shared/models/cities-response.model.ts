@@ -1,5 +1,5 @@
 export interface CitiesResponseModel {
   data: any[],
-  links: any[],
-  metadata: any
+  links?: any[],
+  metadata?: any
 }

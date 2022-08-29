@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CitiesService } from '../../services/cities.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,14 +7,8 @@ import { CitiesService } from '../../services/cities.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private citiesService: CitiesService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.citiesService.getCityDetails().subscribe(
-      {
-        next: (response) => console.log(response.data)
-      }
-    )
-  }
+  ngOnInit(): void {}
 
 }
