@@ -10,7 +10,7 @@ import { CitiesService } from '../../../services/cities.service';
 export class CityContainerComponent implements OnInit {
 
   constructor(private citiesService: CitiesService, ) { }
-  CITY_CODES: string[] = ['Q60', 'Q24004405', 'Q65', 'Q90', 'Q220', 'Q172'];
+  CITY_CODES: string[] = ['Q60', 'Q2807', 'Q65', 'Q90', 'Q220', 'Q172'];
 
   cardInfo: any[] = [];
 
