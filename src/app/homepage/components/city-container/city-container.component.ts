@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ImagesService } from 'src/app/services/images.service';
 import { CitiesService } from '../../../services/cities.service';
 
 @Component({
@@ -8,17 +9,17 @@ import { CitiesService } from '../../../services/cities.service';
 })
 export class CityContainerComponent implements OnInit {
 
-  constructor(private citiesService: CitiesService) { }
-  cityCodes: string[] = ['Q60', 'Q24004405', 'Q65', 'Q90', 'Q220', 'Q172'];
+  constructor(private citiesService: CitiesService, ) { }
+  CITY_CODES: string[] = ['Q60', 'Q24004405', 'Q65', 'Q90', 'Q220', 'Q172'];
 
   cardInfo: any[] = [];
 
   ngOnInit(): void {
-    this.cityCodes.map(cityCode => {
+    this.CITY_CODES.map(cityCode => {
       this.citiesService.getCityDetails(cityCode).subscribe({
         next: (response) => this.cardInfo.push(response.data)
       })
     })
-  }
 
+  }
 }

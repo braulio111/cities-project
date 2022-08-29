@@ -11,7 +11,6 @@ export class CitiesService {
 
   constructor(private http: HttpClient) { }
 
-  cityCodes: string[] = ['Q60', 'Q24004405', 'Q65', 'Q90', 'Q220', 'Q172'];
 
   public getCityDetails(cityCode: string): Observable<CitiesResponseModel> { // Expect response model
     return this.http.get<CitiesResponseModel>(`https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${cityCode}`, { // API URL

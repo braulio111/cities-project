@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ImagesService } from 'src/app/services/images.service';
 
 @Component({
   selector: 'app-city-card',
@@ -7,10 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CityCardComponent implements OnInit {
   @Input() info: any;
-
-  constructor() { }
+  cityImage!: string;
+  constructor(private imageService: ImagesService) { }
 
   ngOnInit(): void {
+    this.imageService.getImage(this.info.city.toLowerCase()).subscribe({
+      next: (response) => this.cityImage = response.results[0].urls.regular
+    })
   }
-
 }

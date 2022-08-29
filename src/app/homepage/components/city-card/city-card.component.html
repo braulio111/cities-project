@@ -2,7 +2,7 @@
 <div class="card">
 <p-card [header]="info.city" [subheader]="info.country" [style]="{width: '360px'}" styleClass="p-card-shadow">
     <ng-template pTemplate="header">
-        <img alt="Card" src="assets/showcase/images/usercard.png">
+        <img alt="Card" [src]="cityImage" [style]="{height: '360px'}">
     </ng-template>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
         quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!</p>
