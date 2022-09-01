@@ -3,20 +3,27 @@ import { NgModule } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { CityCardComponent } from './city-card/city-card.component';
 
 
 
 @NgModule({
   declarations: [
-    NavbarComponent
+    NavbarComponent,
+    CityCardComponent
   ],
   imports: [
     CommonModule,
     InputTextModule,
-    MenubarModule
+    MenubarModule,
+    ButtonModule,
+    CardModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    CityCardComponent
   ]
 })
 export class SharedModule { }

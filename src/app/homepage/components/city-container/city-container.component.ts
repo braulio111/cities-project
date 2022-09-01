@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ImagesService } from 'src/app/services/images.service';
 import { CitiesService } from '../../../services/cities.service';
 
 @Component({
