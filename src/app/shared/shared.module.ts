@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { InputTextModule } from 'primeng/inputtext';
-import { MenubarModule } from 'primeng/menubar';
-import { NavbarComponent } from './navbar/navbar.component';
+import { RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { MenubarModule } from 'primeng/menubar';
 import { CityCardComponent } from './city-card/city-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 
@@ -19,7 +20,8 @@ import { CityCardComponent } from './city-card/city-card.component';
     InputTextModule,
     MenubarModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    RouterModule
   ],
   exports: [
     NavbarComponent,

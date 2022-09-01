@@ -1,6 +1,6 @@
 
 <div class="card">
-<a [routerLink]="">
+<a [routerLink]="'/city/' + info.wikiDataId">
 <p-card [header]="info.city" [subheader]="info.country" [style]="{width: '360px'}" styleClass="p-card-shadow">
     <ng-template pTemplate="header">
         <img alt="Card" [src]="cityImage" [style]="{height: '360px'}">
