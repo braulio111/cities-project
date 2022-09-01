@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 import { CityCardComponent } from './components/city-card/city-card.component';
-import {CardModule} from 'primeng/card';
-import {ButtonModule} from 'primeng/button';
 import { CityContainerComponent } from './components/city-container/city-container.component';
 import { HomeComponent } from './pages/home/home.component';
 
@@ -18,7 +19,8 @@ import { HomeComponent } from './pages/home/home.component';
   imports: [
     CommonModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    RouterModule
   ],
   exports: [
     CityCardComponent,
