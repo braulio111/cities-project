@@ -16,4 +16,8 @@ export class CityCardComponent implements OnInit {
       next: (response) => this.cityImage = response.results[0].urls.regular
     })
   }
+
+  numberWithCommas(x: number) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 }
