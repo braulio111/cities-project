@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageModule } from './homepage/homepage.module';
 import { SharedModule } from './shared/shared.module';
+import { CityModule } from './city/city.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    HomepageModule
+    HomepageModule,
+    CityModule
   ],
   providers: [],
   bootstrap: [AppComponent]
