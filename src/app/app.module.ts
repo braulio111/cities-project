@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CityModule } from './city/city.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -19,7 +20,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    HomepageModule
+    HomepageModule,
+    CityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

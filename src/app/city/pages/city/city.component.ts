@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CitiesService } from '../../../services/cities.service';
 
@@ -17,10 +17,7 @@ export class CityComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
     
     this.citiesService.getCityDetails(this.id).subscribe({
-      next: (response) => {
-        this.cityInfo = response.data;
-      }
+      next: (response) => this.cityInfo = response.data
     })
   }
-
 }
