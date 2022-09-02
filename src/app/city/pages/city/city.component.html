@@ -1,1 +1,3 @@
-<p>{{ this.cityInfo?.city }}</p>
+<div *ngIf="this.cityInfo">
+    <app-near-cities [cityInfo]="cityInfo"></app-near-cities>
+</div>
