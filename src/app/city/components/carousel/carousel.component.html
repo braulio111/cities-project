@@ -1,0 +1,21 @@
+<h1>{{ this.cityInfo.city }}</h1>
+<div class="container">
+  <div class="carousel-container">
+    <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="false">
+        <ng-template let-image pTemplate="item">
+            <div class="product-item">
+                <div class="product-item-content">
+                    <div class="mb-3">
+                        <img [src]="image.urls.regular" [alt]="image.alt_description" class="product-image" />
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+  </div>
+  <div>
+    <p>{{ this.description[0] }}</p>
+    <p>{{ this.description[1] }}</p>
+    <p>{{ this.description[2] }}</p>
+  </div>
+</div>
