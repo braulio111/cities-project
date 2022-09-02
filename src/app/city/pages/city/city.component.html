@@ -1,1 +1,4 @@
-<app-carousel *ngIf="this.cityInfo" [cityInfo]="this.cityInfo"></app-carousel>
+<div *ngIf="this.cityInfo">
+    <app-carousel [cityInfo]="cityInfo"></app-carousel>
+    <app-near-cities [cityInfo]="cityInfo"></app-near-cities>
+</div>
