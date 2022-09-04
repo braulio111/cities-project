@@ -13,7 +13,7 @@ export class CityCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.imageService.getImage(this.info.city.toLowerCase()).subscribe({
-      next: (response) => this.cityImage = response.results[0].urls.regular
+      next: (response) => this.cityImage = response.results[0]?.urls.regular
     })
   }
 

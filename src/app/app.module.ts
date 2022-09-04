@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { CityModule } from './city/city.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { SharedModule } from './shared/shared.module';
-import { CityModule } from './city/city.module';
 
 
 @NgModule({

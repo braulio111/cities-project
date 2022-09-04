@@ -20,7 +20,7 @@ export class CarouselComponent implements OnInit {
       next: (response) => this.images = response.results
     })
 
-    this.citiesService.getCityDescription(this.cityInfo.city).subscribe({
+    this.citiesService.getCityDescription(`${this.cityInfo.city}, ${this.cityInfo.country}`).subscribe({
       next: (response) => this.description = response.summary
     })
   }

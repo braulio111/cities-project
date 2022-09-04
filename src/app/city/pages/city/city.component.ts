@@ -1,5 +1,5 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CitiesService } from '../../../services/cities.service';
 
 @Component({
@@ -11,13 +11,15 @@ export class CityComponent implements OnInit {
   id: any;
   cityInfo: any;
 
-  constructor(private citiesService: CitiesService, private route: ActivatedRoute) { }
+  constructor(private citiesService: CitiesService, private route: ActivatedRoute, private router: Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
-    
-    this.citiesService.getCityDetails(this.id).subscribe({
-      next: (response) => this.cityInfo = response.data
-    })
+    this.route.params.subscribe(routeParams => {
+      this.citiesService.getCityDetails(routeParams['id']).subscribe({
+        next: (response) => this.cityInfo = response.data
+      })
+    });
   }
 }
