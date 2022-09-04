@@ -17,7 +17,6 @@ export class NearCitiesComponent implements OnInit {
         this.nearCities = response.data
         this.nearCities.shift()
         this.nearCities.pop();
-        console.log(this.nearCities);
       }
     })
   }
