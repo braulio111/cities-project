@@ -1,5 +1,8 @@
 <h1>{{ this.cityInfo.city }}</h1>
-<div class="container" *ngIf="this.description">
+<div class="loader" *ngIf="this.loading < 2">
+  <i class="pi pi-spin pi-globe" style="font-size: 5rem"></i>
+</div>
+<div class="container" *ngIf="this.loading === 2">
   <div class="carousel-container">
     <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="false">
         <ng-template let-image pTemplate="item">
@@ -13,7 +16,7 @@
         </ng-template>
     </p-carousel>
   </div>
-  <div>
+  <div class="description">
     <p>{{ this.description[0] }}</p>
     <p>{{ this.description[1] }}</p>
     <p>{{ this.description[2] }}</p>

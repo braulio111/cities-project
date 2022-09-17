@@ -1,3 +1,4 @@
-<div class="card-container">
+<i class="pi pi-spin pi-spinner" style="font-size: 8rem" *ngIf="this.loading"></i>
+<div class="card-container" *ngIf="!this.loading">
   <app-city-card *ngFor="let card of cardInfo" [info]="card"></app-city-card>
 </div>
