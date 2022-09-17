@@ -12,16 +12,23 @@ export class CarouselComponent implements OnInit {
   @Input() cityInfo: any;
   images: ImagesResponseModel[];
   description: string[];
+  loading: number = 0;
 
   constructor(private imageService: ImagesService, private citiesService: CitiesService) { }
 
   ngOnInit(): void {
     this.imageService.getImage(this.cityInfo.city).subscribe({
-      next: (response) => this.images = response.results
+      next: (response) => {
+        this.images = response.results
+        this.loading++
+      }
     })
 
     this.citiesService.getCityDescription(`${this.cityInfo.city}, ${this.cityInfo.country}`).subscribe({
-      next: (response) => this.description = response.summary
+      next: (response) => {
+        this.description = response.summary
+        this.loading++
+      }
     })
   }
 }

@@ -1,6 +1,9 @@
 <p-menubar>
   <ng-template pTemplate="start">
-    <i class="pi pi-globe" style="font-size: 2.5rem" [routerLink]="['/home']"><a> Cities</a></i>
+    <div class="app-logo" [routerLink]="['/home']">
+      <i class="pi pi-globe" style="font-size: 2.5rem"></i>
+      <h1>Cities</h1>
+    </div>
   </ng-template>
   <ng-template pTemplate="end">
     <span class="p-input-icon-left">
