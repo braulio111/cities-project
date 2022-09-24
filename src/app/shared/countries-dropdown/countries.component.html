@@ -1,1 +1,4 @@
-<p>countries works!</p>
+<div *ngIf="this.selectedCountry">
+    <app-states-dropdown [selectedCountry]="selectedCountry"></app-states-dropdown>
+</div>
+<p-dropdown [options]="countriesList" [(ngModel)]="selectedCountry" optionLabel="name" [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="onLazyLoad($event)"></p-dropdown>

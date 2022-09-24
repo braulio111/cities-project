@@ -7,13 +7,18 @@ import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 import { CityCardComponent } from './city-card/city-card.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
-
+import {DropdownModule} from 'primeng/dropdown';
+import { CountriesComponent } from './countries-dropdown/countries.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatesDropdownComponent } from './states-dropdown/states-dropdown/states-dropdown.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    CityCardComponent
+    CityCardComponent,
+    CountriesComponent,
+    StatesDropdownComponent
   ],
   imports: [
     CommonModule,
@@ -21,11 +26,15 @@ import { NavbarComponent } from './navbar/navbar.component';
     MenubarModule,
     ButtonModule,
     CardModule,
-    RouterModule
+    RouterModule,
+    DropdownModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   exports: [
     NavbarComponent,
-    CityCardComponent
+    CityCardComponent,
+    CountriesComponent
   ]
 })
 export class SharedModule { }
