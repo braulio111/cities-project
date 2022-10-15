@@ -1,4 +1,3 @@
-<div *ngIf="this.selectedCountry">
-    <app-states-dropdown [selectedCountry]="selectedCountry"></app-states-dropdown>
-</div>
+
+<app-states-dropdown *ngIf="this.selectedCountry" [selectedCountry]="selectedCountry"></app-states-dropdown>
 <p-dropdown [options]="countriesList" [(ngModel)]="selectedCountry" optionLabel="name" [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="onLazyLoad($event)"></p-dropdown>

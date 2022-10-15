@@ -6,7 +6,7 @@ import { CountriesService } from 'src/app/services/countries.service';
   templateUrl: './states-dropdown.component.html',
   styleUrls: ['./states-dropdown.component.scss']
 })
-export class StatesDropdownComponent implements OnInit, OnChanges {
+export class StatesDropdownComponent implements OnInit {
 
   @Input() selectedCountry: any;
   countries: any;
@@ -34,9 +34,6 @@ export class StatesDropdownComponent implements OnInit, OnChanges {
       console.log(this.countries)
     }
     })
-  }
-  ngOnChanges(): void {
-    console.log(this.selectedCountry)
   }
 }
 

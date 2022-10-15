@@ -14,7 +14,7 @@ export class CountriesService {
   public getCountries(offset = 0): Observable<CitiesResponseModel>{
     return this.http.get<CitiesResponseModel>('https://wft-geo-db.p.rapidapi.com/v1/geo/countries', {
     headers: new HttpHeaders({
-      'X-RapidAPI-Key': '5b8b53d7f6mshb64105ad229cf77p1c7bd2jsn08db3a0517fe',
+      'X-RapidAPI-Key': 'aa803d784fmshdc6b4cf35281382p16b366jsn1758e8020f60',
       'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
     }),
     params: new HttpParams().set('offset', offset).set('limit', 100)
