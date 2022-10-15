@@ -1,3 +1,16 @@
 
 <app-states-dropdown *ngIf="this.selectedCountry" [selectedCountry]="selectedCountry"></app-states-dropdown>
-<p-dropdown [options]="countriesList" [(ngModel)]="selectedCountry" optionLabel="name" [virtualScroll]="true" [virtualScrollItemSize]="50" [lazy]="true" (onLazyLoad)="onLazyLoad($event)"></p-dropdown>
+<p-dropdown [options]="countriesList" [filter]="true" filterBy="name" [(ngModel)]="selectedCountry" optionLabel="name" placeholder="Select a Country...">
+  <ng-template pTemplate="selectedItem">
+    <div class="country-item country-item-value" *ngIf="selectedCountry">
+      <span style="margin-right: 5px;">{{ getCountryIcon(selectedCountry.code) }}</span>
+      <div>{{selectedCountry.name}}</div>
+    </div>
+  </ng-template>
+  <ng-template let-country pTemplate="item">
+    <div class="country-item">
+      <span style="margin-right: 5px;">{{ getCountryIcon(country.code) }}</span>
+      <div>{{country.name}}</div>
+    </div>
+  </ng-template>
+</p-dropdown>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import getUnicodeFlagIcon from 'country-flag-icons/unicode';
 import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
@@ -9,15 +10,10 @@ import { CountriesService } from 'src/app/services/countries.service';
 
 
 export class CountriesComponent implements OnInit {
-  countriesList: any = [];
+  countriesList: Country[] = [];
   selectedCountry: any;
-  cities: City[];
-  selectedCity: City;
-  selectedCityCode: string;
 
-  constructor(private CountriesService: CountriesService) {
-
-   }
+  constructor(private CountriesService: CountriesService) {}
 
    ngOnInit(): void {
     this.CountriesService.getCountries().subscribe({
@@ -27,23 +23,22 @@ export class CountriesComponent implements OnInit {
         })
       }
     })
+
+    this.CountriesService.getCountries(100).subscribe({
+      next: (response) => {
+        response.data.forEach(country => {
+          this.countriesList.push({ name: country.name, code: country.code });
+        })
+      }
+    })
   }
 
-  onLazyLoad(event: any): void {
-    if (event.last === 100 && event.first === 90) {
-      this.CountriesService.getCountries(event.last).subscribe({
-        next: (response) => {
-          response.data.forEach(country => {
-            this.countriesList.push({ name: country.name, code: country.code });
-          })
-        }
-      })
-    }
+  getCountryIcon(countryCode: string) {
+    return getUnicodeFlagIcon(countryCode);
   }
-
 }
 
-interface City {
+interface Country {
   name: string,
   code: string
 }
