@@ -1,40 +1,31 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
-import { CountriesService } from 'src/app/services/countries.service';
+import { Component, Input, OnChanges } from '@angular/core';
+import { StatesService } from 'src/app/services/states.service';
 
 @Component({
   selector: 'app-states-dropdown',
   templateUrl: './states-dropdown.component.html',
   styleUrls: ['./states-dropdown.component.scss']
 })
-export class StatesDropdownComponent implements OnInit {
+export class StatesDropdownComponent implements OnChanges {
+
 
   @Input() selectedCountry: any;
-  countries: any;
+  states: any;
   
   cities: City[];
   selectedCity: City;
   selectedCityCode: string;
 
-  constructor(private CountriesService: CountriesService) {
-
-    this.cities = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
+  constructor(private StatesService: StatesService) {
 
    }
 
-  ngOnInit(): void {
-    this.CountriesService.getCountries(150).subscribe({
-      next: (response) => {
-      this.countries = response.data
-      console.log(this.countries)
-    }
-    })
-  }
+   ngOnChanges(){
+    this.StatesService.getStates(this.selectedCountry.code).subscribe({  
+      next: (response) =>{
+      this.states = response.data
+   }})
+   }
 }
 
 interface City {
