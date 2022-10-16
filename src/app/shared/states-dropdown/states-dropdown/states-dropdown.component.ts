@@ -11,10 +11,7 @@ export class StatesDropdownComponent implements OnChanges {
 
   @Input() selectedCountry: any;
   states: any;
-  
-  cities: City[];
-  selectedCity: City;
-  selectedCityCode: string;
+  selectedState: any;
 
   constructor(private StatesService: StatesService) {
 

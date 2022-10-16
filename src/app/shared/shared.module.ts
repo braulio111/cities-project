@@ -12,13 +12,15 @@ import { CountriesComponent } from './countries-dropdown/countries.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatesDropdownComponent } from './states-dropdown/states-dropdown/states-dropdown.component';
+import { CitiesDropdownComponent } from './cities-dropdown/cities-dropdown/cities-dropdown.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     CityCardComponent,
     CountriesComponent,
-    StatesDropdownComponent
+    StatesDropdownComponent,
+    CitiesDropdownComponent
   ],
   imports: [
     CommonModule,
